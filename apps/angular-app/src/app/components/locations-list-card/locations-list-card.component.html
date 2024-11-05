@@ -1,0 +1,24 @@
+<div *ngIf="!isLoading">
+  <div class="p-3">
+    <mfee-project-navbar></mfee-project-navbar>
+    <div class="card">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ location.title }}</td>
+            <td>{{ location.description }}</td>
+            <td>{{ location.category }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<mfee-project-navbar></mfee-project-navbar>
+<div class="text-center py-5">
+  <div class="container">
+    <h3 class="display-4 mb-5">Discovering the World</h3>
+  </div>
+  <div class="mb-2">
+    <button class="btn btn-light" (click)="resetFilter()">All</button>
+    <button *ngFor="let category of categories" class="btn btn-light" (click)="filterCategory(category)">{{ category }}</button>
+  </div>
+  <div class="mt-3 d-flex justify-content-center">
+    <div class="card w-75">
+      <div class="card-body">
+        <div class="row">
+          <div
+            *ngFor="let location of filteredLocations"
+            class="col-6 card text-light"
+            [ngStyle]="{ 'background-image': 'url(' + location.url + ')' }"
+          >
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+              <div class="text-center">
+                <h5 class="card-title">{{ location.title }}</h5>
+                <p class="card-text">{{ location.description }}</p>
+                <p class="card-text">{{ location.category | uppercase }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
